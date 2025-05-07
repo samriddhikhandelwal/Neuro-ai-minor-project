@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us</title>
+  <link rel="icon" href="{{ url_for('static', filename='neuroai-logo.png') }}"type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("/static/about.png"); /* Make sure this path matches your project */
+      background-size: cover;
+      background-position: right;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .brand {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+
+    .about-container {
+      background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay for readability */
+      padding: 40px;
+      max-width: 800px;
+      margin: 100px auto;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="brand">
+        <img src="{{ url_for('static', filename='neuroai-logo.png') }}" alt="NeuroAI Logo" />
+
+        NeuroAI
+    </div>
+</div>
+  <div class="about-container">
+    <h1>About Us</h1>
+<p>
+Welcome to our healthcare platform — <strong>NeuroAI</strong>. We are dedicated to providing accurate and efficient analysis of disease symptoms using cutting-edge AI technologies. Our goal is to offer fast and reliable diagnosis assistance through image and text input, helping users access better health insights and suggestions.
+</p>
+
+<p>
+Our platform specializes in the early detection of <strong>brain tumors</strong> using deep learning models trained on MRI scans. Brain tumors can be life-threatening if not diagnosed in time, and traditional methods often involve manual analysis by radiologists. Our AI-based system automates this process, providing rapid and precise results to assist healthcare professionals and patients alike.
+</p>
+
+<p>
+Our team of developers and medical professionals work together to ensure that every feature is designed with care, accuracy, and user well-being in mind. Thank you for trusting us with your health journey.
+</p>
+
+  </div>
+</body>
+</html>

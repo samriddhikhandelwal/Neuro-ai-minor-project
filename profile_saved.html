@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile Saved</title>
+</head>
+<body>
+    <h1>Profile Saved Successfully! 🎉</h1>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Contact:</strong> {{ contact }}</p>
+
+    {% if image %}
+    <p><strong>Uploaded Image:</strong></p>
+    <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Profile Image" width="200">
+    {% else %}
+    <p><strong>No image uploaded.</strong></p>
+    {% endif %}
+
+    <br><br>
+    <a href="/">Go to Home</a>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SweetAlert2 CSS & JS -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="icon" href="{{ url_for('static', filename='neuroai-logo.png') }}"type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('/static/contact.png'); /* path to your image */
+      background-size: cover;
+      background-position: center;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+    .navbar {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .brand {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+
+    .contact-container {
+      background-color: rgba(0, 0, 0, 0.5); /* for readability */
+      padding: 40px;
+      max-width: 600px;
+      margin: 100px auto;
+      border-radius: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        Swal.fire({
+          icon: 'success',
+          title: '{{ messages[0] }}',
+          showConfirmButton: false,
+          timer: 2000
+        });
+      });
+    </script>
+  {% endif %}
+{% endwith %}
+
+
+  <div class="navbar">
+    <div class="brand">
+        <img src="{{ url_for('static', filename='neuroai-logo.png') }}" alt="NeuroAI Logo" />
+
+        NeuroAI
+    </div>
+</div>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form method="POST" action="{{ url_for('contact') }}">
+      <!-- form inputs -->
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+<footer style="background-color: rgba(0, 0, 0, 0.7); color: white; text-align: center; padding: 15px; margin-top: 30px;">
+  <hr style="border-color: white;">
+  <p>For queries, contact us at: 
+      <a href="mailto:neuroai.support@gmail.com" style="color: #00cfff; text-decoration: underline;">neuroai.support@gmail.com</a>
+  </p>
+</footer>
+
+</body>
+
+
+</html>

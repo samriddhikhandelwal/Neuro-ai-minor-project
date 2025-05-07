@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Describe Symptoms and Upload MRI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1588776814546-ec7e381c8ef7') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px gray;
+        }
+        input, button {
+            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <h2>Upload MRI and Describe Symptoms</h2>
+        <input type="text" name="symptoms" placeholder="Describe your symptoms" required><br>
+        <input type="file" name="image" accept="image/*" required><br>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

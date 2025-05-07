@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MediScan AI</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icon.png') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url("/static/health-bg.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-section img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-section span {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100% - 80px);
+        }
+
+        .upload-box {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .upload-box h2 {
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .upload-box input[type="file"],
+        .upload-box textarea {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .upload-box button {
+            background-color: #00c8a0;
+            color: white;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .upload-box button:hover {
+            background-color: #00a88a;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='icon.png') }}" alt="NeuroAI Logo">
+            <span>NeuroAI</span>
+        </div>
+        <div class="nav-links">
+            <a href="profile">Profile</a>
+            <a href="about">About</a>
+            <a href="contact">Contact Us</a>
+        </div>
+        
+    </div>
+
+    <!-- Main Form Section -->
+    <div class="container">
+        <div class="upload-box">
+            <h2>Upload Image for Analysis</h2>
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <input type="text" name="text" placeholder="Describe your symptoms" required>
+                <input type="file" name="file"> <!-- Optional -->
+                <button type="submit">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("../static/prediction.jpg"); /* or keep using Jinja in inline HTML */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: block; /* this is default but make sure it's not 'flex' */
+}
+
+.result {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+.result-container p {
+    color: white;
+}
+
+.navbar {
+    background-color: #111827;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Adjust for navbar height */
+    margin-top: 70px; /* This pushes it down so it's vertically centered below the navbar */
+}
+
